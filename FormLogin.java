@@ -131,13 +131,13 @@ public class FormLogin extends javax.swing.JFrame {
                 Connection conn = DriverManager.getConnection(url, user,pwd);
                 Statement st= (Statement) conn.createStatement();
                 
-                String sql = "Select * from user where kd_user= '"+txtuser.getText().trim()+"' and password = '"+txtpas.getText().trim()+"'";
+                String sql = "Select * from user where nm_user= '"+txtuser.getText().trim()+"' and password = '"+txtpas.getText().trim()+"'";
                 
                 ResultSet rs= st.executeQuery(sql);
                 if (rs.next()){
                     String nama= rs.getString("nm_user");
                     
-                    JOptionPane.showMessageDialog(this, "Selamat Datang,"+nama+"","Welcome", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Selamat Datang "+nama+"","Welcome", JOptionPane.INFORMATION_MESSAGE);
                     
                     this.dispose();
                     MenuUtama menu = new MenuUtama();
